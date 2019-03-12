@@ -143,7 +143,8 @@
 /datum/surgery_step/robotics/repair_brute
 	allowed_tools = list(
 		/obj/item/weapon/weldingtool = 100,
-		/obj/item/weapon/pickaxe/plasmacutter = 50
+		/obj/item/weapon/pickaxe/plasmacutter = 50,
+		/obj/item/weapon/flame/lighter/zippo = 35
 	)
 
 	min_duration = 50

@@ -1,7 +1,7 @@
 /mob/living/carbon/human/proc/lick_wounds(var/mob/living/carbon/M in living_mobs(1))
 	set name = "Lick Wounds"
 	set category = "Abilities"
-	set desc = "Disinfect and heal small wounds with your saliva."
+	set desc = "Disinfect and heal wounds on other organics."
 
 	if(nutrition < 50)
 		to_chat(src, "<span class='warning'>You need more energy to produce antiseptic enzymes. Eat something and try again.</span>")

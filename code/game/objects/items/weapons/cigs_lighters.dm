@@ -514,6 +514,24 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "zippo"
 	item_state = "zippo"
 
+/obj/item/weapon/flame/lighter/attack(var/atom/A, var/mob/living/user, var/def_zone)
+	if(ishuman(A) && user.a_intent == I_HELP)
+		var/mob/living/carbon/human/H = A
+		var/obj/item/organ/external/S = H.organs_by_name[user.zone_sel.selecting]
+
+		if(!S || S.robotic < ORGAN_ROBOT || S.open == 3)
+			return ..()
+
+		if(!lit)
+			to_chat(user, "<span class='warning'>You'll need to turn [src] on to patch the damage on [H]'s [S.name]!</span>")
+			return 1
+
+		S.robo_repair(5, BRUTE, "some dents", src, user)
+
+		return 1
+
+	return..()
+
 /obj/item/weapon/flame/lighter/random
 	New()
 		icon_state = "lighter-[pick("r","c","y","g")]"

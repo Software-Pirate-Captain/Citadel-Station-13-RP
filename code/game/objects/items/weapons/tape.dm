@@ -17,6 +17,7 @@
 			var/obj/item/organ/external/affecting = H.get_organ(user.zone_sel.selecting)
 
 			if (affecting && (affecting.robotic >= ORGAN_ROBOT))
+				affecting.robo_repair(5, "omni", "some damage", src, user)
 				return
 
 			///For organics
